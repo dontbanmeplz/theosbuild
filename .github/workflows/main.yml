@@ -11,5 +11,11 @@ jobs:
         uses: Randomblock1/theos-action@v1
       - name: setup part 2
         run: export THEOS=/github/worker/theos
-      - name: test
-        run: ls
+      - name: make
+        run: make package
+      - name: upload
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: packages/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
