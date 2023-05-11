@@ -5,8 +5,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v2.3.4
+      - name: setup
       - run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
-      - run: cat /github/workspace/path.sh
-      - run: cd /github/workspace
       - run: ls
       - run: source path.sh
