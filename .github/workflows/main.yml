@@ -6,9 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo
-      - uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2.3.4
       - name: setup
-      - uses: Randomblock1/theos-action@v1
-      - run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
-      - run: ls
-      - run: source path.sh
+        uses: Randomblock1/theos-action@v1
+      - name: setup part 2
+        run: source path.sh
+      - name: test
+        run: ls
