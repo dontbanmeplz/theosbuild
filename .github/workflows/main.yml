@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
-      - run: ls
+      - run: cd theos
       - run: pwd
       - run: ls ${{ github.workspace }}
       - run: source path.sh
