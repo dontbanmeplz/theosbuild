@@ -14,8 +14,10 @@ jobs:
       - name: make
         run: make package
       - name: upload
-        uses: JasonEtco/upload-to-release@master
-        with:
-          args: packages/*
+        uses: xresloader/upload-to-github-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          file: "./packages/*.deb"
+          tags: true
+          draft: false
