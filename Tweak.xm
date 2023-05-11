@@ -1,4 +1,5 @@
-@interface SBLockScreenViewControllerBase : UIViewController
+#import <UIKit/UIKit.h>
+@interface CSCoverSheetViewController : UIViewController
 @end
 
 %hook SBLockScreenViewControllerBase
