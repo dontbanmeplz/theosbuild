@@ -6,6 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
-      - run: tree
-      - run: /usr/local/theos make
       - run: ls
+      - run: source path.sh
