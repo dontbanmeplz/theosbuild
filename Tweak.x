@@ -2,6 +2,10 @@
 @interface CSCoverSheetViewController : UIViewController
 @end
 
+NSString *const domainString = @"com.zanehelton.redrectangle";
+static BOOL enabled;
+
+%group tweak
 %hook CSCoverSheetViewController
 - (void) viewDidLoad {
 	%orig;
@@ -11,3 +15,16 @@
 	[self.view addSubview:redRectangle];
 }
 %end
+%end
+
+void loadPrefs() {
+    NSUserDefaults *appUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:domainString];
+    enabled = [appUserDefaults objectForKey:@"enabledK"] ? [[appUserDefaults objectForKey:@"enabledK"] boolValue] : NO;
+}
+
+%ctor{
+	loadPrefs();
+	if (enabled) {
+		%init(tweak);
+	}
+}
