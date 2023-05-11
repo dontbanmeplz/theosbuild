@@ -2,7 +2,7 @@
 @interface CSCoverSheetViewController : UIViewController
 @end
 
-%hook SBLockScreenViewControllerBase
+%hook CSCoverSheetViewController
 - (void) viewDidLoad {
 	%orig;
 
