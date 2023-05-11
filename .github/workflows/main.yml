@@ -7,4 +7,6 @@ jobs:
     steps:
       - run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
       - run: ls
+      - run: pwd
+      - run: ls ${{ github.workspace }}
       - run: source path.sh
