@@ -7,9 +7,9 @@
 		<key>cell</key>
 		<string>PSSwitchCell</string>
 		<key>defaults</key>
-		<string>red</string>
+		<string>com.zanehelton.redrectangle</string>
 		<key>label</key>
-		<string>red</string>
+		<string>RedRectangle</string>
 		<key>key</key>
 		<string>enabled</string>
 		<key>default</key>
@@ -17,7 +17,7 @@
 		<key>icon</key>
 		<string>/Applications/Preferences.app/icon-table@2x.png</string>
 		<key>PostNotification</key>
-		<string>red/preferences.changed</string>
+		<string>com.zanehelton.redrectangle/preferences.changed</string>
 	</dict>
 </dict>
 </plist>
