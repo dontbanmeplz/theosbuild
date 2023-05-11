@@ -21,3 +21,8 @@ jobs:
           file: "./packages/*.deb"
           tags: true
           draft: false
+      - name: upload part 2
+        uses: actions/upload-artifact@v2
+        with: 
+            name: assets-for-download
+            path: packages
