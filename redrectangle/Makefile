@@ -1,5 +1,3 @@
-TARGET = iphone:clang:15.5:15.0
-
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = redrectangle
