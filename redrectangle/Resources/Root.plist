@@ -24,6 +24,42 @@
 		</dict>
 		<dict>
 			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>defaults</key>
+			<string>com.zanehelton.redrectangle</string>
+			<key>key</key>
+			<string>slidex</string>
+			<key>min</key>
+			<real>0</real>
+			<key>max</key>
+			<real>400</real>
+			<key>showValue</key>
+			<true/>
+			<key>isSegmented</key>
+			<true/>
+			<key>segmentCount</key>
+			<integer>200</integer>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>defaults</key>
+			<string>com.zanehelton.redrectangle</string>
+			<key>key</key>
+			<string>slidey</string>
+			<key>min</key>
+			<real>0</real>
+			<key>max</key>
+			<real>400</real>
+			<key>showValue</key>
+			<true/>
+			<key>isSegmented</key>
+			<true/>
+			<key>segmentCount</key>
+			<integer>200</integer>
+		</dict>
+		<dict>
+			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
 			<string>Open on Github</string>

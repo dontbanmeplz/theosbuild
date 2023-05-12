@@ -4,13 +4,14 @@
 
 NSString *const domainString = @"com.zanehelton.redrectangle";
 static BOOL enabled;
-
+static int x;
+static int y;
 %group tweak
 %hook CSCoverSheetViewController
 - (void) viewDidLoad {
 	%orig;
-
-	UIView *redRectangle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+	//loadPrefs();
+	UIView *redRectangle = [[UIView alloc] initWithFrame:CGRectMake(x, y, 200, 200)];
 	[redRectangle setBackgroundColor:[UIColor redColor]];
 	[self.view addSubview:redRectangle];
 }
@@ -20,7 +21,8 @@ static BOOL enabled;
 void loadPrefs() {
     NSUserDefaults *appUserDefaults = [[NSUserDefaults alloc] initWithSuiteName:domainString];
     enabled = [appUserDefaults objectForKey:@"enabledK"] ? [[appUserDefaults objectForKey:@"enabledK"] boolValue] : NO;
-}
+	x = [[appUserDefaults objectForKey:@"slidex"] ?: @(0)  intValue];
+	y = [[appUserDefaults objectForKey:@"slidey"] ?: @(0)  intValue];}
 
 %ctor{
 	loadPrefs();
