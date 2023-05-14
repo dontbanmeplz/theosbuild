@@ -1,0 +1,28 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2.3.4
+      - name: setup
+        uses: Randomblock1/theos-action@v1
+      - name: setup part 2
+        run: export THEOS=/github/worker/theos
+      - name: make
+        run: make package
+      - name: upload
+        uses: xresloader/upload-to-github-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          file: "./packages/*.deb"
+          tags: true
+          draft: false
+      - name: upload part 2
+        uses: actions/upload-artifact@v2
+        with: 
+            name: assets-for-download
+            path: packages
